@@ -1,0 +1,17 @@
+<h1>PhotoSite User List</h1>
+
+<p>There are <%=@users.count %> Users</p>
+<table>
+  <tr>
+    <td><b>User ID</b></td>
+    <td><b>First Name</b></td>
+    <td><b>Last Name</b></td>
+  </tr>
+  <% @users.find_each do |user|%>
+    <tr>
+      <td><%=link_to(user.id, "/photos/index/" + user.id.to_s)%></td>
+      <td><%=user.first_name%></td>
+      <td><%=user.last_name%></td>
+    </tr>
+  <%end%>
+</table>
